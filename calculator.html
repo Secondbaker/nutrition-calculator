@@ -14,7 +14,7 @@
             <table>
                 <tr>
                     <td>Calories</td>
-                    <td></td>
+                    <td class="calories"></td>
                 </tr>
                 <tr>
                     <td>Protein</td>
@@ -45,11 +45,11 @@
                 </tr>
             </table>
         </div>
-        <div id="lose-fat">
+        <div id="lose-fat" class="lose-fat">
             <table>
                 <tr>
                     <td>Calories</td>
-                    <td></td>
+                    <td class="calories"></td>
                 </tr>
                 <tr>
                     <td>Protein</td>
@@ -80,11 +80,11 @@
                 </tr>
             </table>
         </div>
-        <div id="gain-muscle">
+        <div id="gain-muscle" class="gain-muscle">
             <table>
                 <tr>
                     <td>Calories</td>
-                    <td></td>
+                    <td class="calories"></td>
                 </tr>
                 <tr>
                     <td>Protein</td>
@@ -234,7 +234,24 @@
             let classes = $(this).attr('class');
             try
             {
+                console.log(classes);
                 //first we'll figure out the calories needed
+                let calories = 0;
+                if(classes.includes('maintain'))
+                {
+                    calories = weight * 14;
+                }
+                else if(classes.includes('lose-fat'))
+                {
+                    calories = weight * 12;
+                }
+                else if(classes.includes('gain-muscle'))
+                {
+                    calories = weight * 16;
+                }
+                console.log(calories);
+                console.log($(this + '.calories'));
+                $(this + '.calories').html(calories);
             }
             catch(error)
             {
@@ -248,7 +265,7 @@
     {
         console.log(weight);
         console.log(unit);
-        if(unit == "lb.")
+        if(unit == "lb")
         {
             return weight;
         }
