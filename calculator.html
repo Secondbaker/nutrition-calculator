@@ -250,8 +250,8 @@
                     calories = weight * 16;
                 }
                 console.log(calories);
-                console.log($(this + '.calories'));
-                $(this + '.calories').html(calories);
+                console.log($(this).find('.calories'));
+                $(this).find('.calories').html(calories);
             }
             catch(error)
             {
