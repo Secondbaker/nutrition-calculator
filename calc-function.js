@@ -1,5 +1,3 @@
-import("https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js");
-
 const KGToLB = 2.20462262;
 const CaloriesPerProteinGram = 4;
 const CaloresPerFatGram = 9;
@@ -9,9 +7,12 @@ $(document).ready(insertCalculator);
 
 function insertCalculator() {
     console.log('inserting?');
-    $('.nutritional-calculator').get("/calculator.html", function(data) {
-        $("#secondHeader").replaceWith(data);
+    $('.nutritional-calculator').load("/calculator.html", function(data) {
+        console.log('got data');
+        $(".nutritional-calculator").html(data);
+        console.log(data);
     }); 
+    console.log('should have inserted');
 }
 
 $('#calculate-button').click(button =>
