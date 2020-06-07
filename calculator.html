@@ -150,7 +150,7 @@
                 </tr>
             </table>
         </div>
-        <div id="lose-fat-low-carb-high-protein">
+        <div id="lose-fat-low-carb-high-protein" class="lose-fat low-carb high-protein">
             <table>
                 <tr>
                     <td>Calories</td>
@@ -185,7 +185,7 @@
                 </tr>
             </table>
         </div>
-        <div id="lose-fat-high-protein">
+        <div id="lose-fat-high-protein" class="lose-fat high-protein">
             <table>
                 <tr>
                     <td>Calories</td>
@@ -234,7 +234,6 @@
             let classes = $(this).attr('class');
             try
             {
-                console.log(classes);
                 //first we'll figure out the calories needed
                 let calories = 0;
                 if(classes.includes('maintain'))
@@ -249,12 +248,25 @@
                 {
                     calories = weight * 16;
                 }
-                console.log(calories);
-                console.log($(this).find('.calories'));
                 $(this).find('.calories').html(calories);
+
+                let proteinGrams = 0;
+                let proteinPalms = 0;
+                if(classes.includes('high-protein'))
+                {
+                    proteinGrams = weight * 1.5;
+                }
+                else
+                {
+                    proteinGrams = weight;
+                }
+                proteinPalms = Math.round(proteinGrams / 30);
+                $(this).find('.protein-grams').html(proteinGrams);
+                $(this).find('.protein-palms').html(proteinPalms);
             }
             catch(error)
             {
+                //This is where we end up if classes is undefined
             }
         });
 
