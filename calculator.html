@@ -115,11 +115,11 @@
                 </tr>
             </table>
         </div>
-        <div id="lose-fat-low-carb-normal-protein" class="low-carb normal-protein">
+        <div id="lose-fat-low-carb-normal-protein" class="lose-fat low-carb normal-protein">
             <table>
                 <tr>
                     <td>Calories</td>
-                    <td></td>
+                    <td class="calories"></td>
                 </tr>
                 <tr>
                     <td>Protein</td>
@@ -154,7 +154,7 @@
             <table>
                 <tr>
                     <td>Calories</td>
-                    <td></td>
+                    <td class="calories"></td>
                 </tr>
                 <tr>
                     <td>Protein</td>
@@ -189,7 +189,7 @@
             <table>
                 <tr>
                     <td>Calories</td>
-                    <td></td>
+                    <td class="calories"></td>
                 </tr>
                 <tr>
                     <td>Protein</td>
@@ -225,6 +225,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
     const KGToLB = 2.20462262;
+    const CaloriesPerProteinGram = 4;
+    const CaloresPerFatGram = 9;
+    const CaloriesPerCarbohydrateGram = 4;
     $('#calculate-button').click(button =>
     {
         console.log("clicked");
@@ -250,6 +253,7 @@
                 }
                 $(this).find('.calories').html(calories);
 
+                //next we'll figure out the protein, since it relies only on weight
                 let proteinGrams = 0;
                 let proteinPalms = 0;
                 if(classes.includes('high-protein'))
@@ -260,9 +264,35 @@
                 {
                     proteinGrams = weight;
                 }
-                proteinPalms = Math.round(proteinGrams / 30);
+                proteinPalms = proteinGrams / 30;
                 $(this).find('.protein-grams').html(proteinGrams);
                 $(this).find('.protein-palms').html(proteinPalms);
+
+                //next we'll need to get the carbohydrates
+                //carbohydrates and fats will be calculated based on a percentage of what calories remain
+                let fatAndCarbCalories = calories - (proteinGrams * CaloriesPerProteinGram);
+                console.log(fatAndCarbCalories);
+                let carbCalories = 0;
+                if(classes.includes('low-carb'))
+                {
+                    carbCalories = fatAndCarbCalories / 4;
+                }
+                else
+                {
+                    carbCalories = fatAndCarbCalories / 2;
+                }
+
+                let carbohydratesGrams = carbCalories / CaloriesPerCarbohydrateGram;
+                let carbohydratesCuppedHandfulls = Math.round(carbohydratesGrams / 35);
+                $(this).find('.carbohydrates-grams').html(carbohydratesGrams);
+                $(this).find('.carbohydrates-cupped-handfulls').html(carbohydratesCuppedHandfulls);
+
+                //finally we get the fats
+                let fatCalories = fatAndCarbCalories - carbCalories;
+                let fatGrams = fatCalories / CaloresPerFatGram;
+                let fatThumbs = fatGrams / 15;
+                $(this).find('.fats-grams').html(fatGrams);
+                $(this).find('.fats-thumbs').html(fatThumbs);
             }
             catch(error)
             {
