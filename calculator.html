@@ -1,224 +1,232 @@
-<div class="calculator">
-    <div id="input">
-        <label for="weight">Current weight:</label>
-        <input type="number" id="weight">
-        <select id="unit">
-            <option value="lb">lb.</option>
-            <option value="kg">kg</option>
-        </select>
-        <button id="calculate-button">Calculate</button>
-    </div>
-    <div id="nutrition-tables">
-        <div id="nutrition-table-0" class="maintain normal-protein normal-fat normal-carbs">
-            <p>To maintain (Bodyweight x 14)</p>
-            <table>
-                <tr>
-                    <td>Calories</td>
-                    <td class="calories"></td>
-                </tr>
-                <tr>
-                    <td>Protein</td>
-                    <td class="protein-grams"></td>
-                    <td>Grams</td>
-                    <td class="protein-palms"></td>
-                    <td>Palms</td>
-                </tr>
-                <tr>
-                    <td>Vegetables</td>
-                    <td></td>
-                    <td></td>
-                    <td class="veggies-fists"></td>
-                </tr>
-                <tr>
-                    <td>Carbohydrates</td>
-                    <td class="carbohydrates-grams"></td>
-                    <td>Grams</td>
-                    <td class="carbohydrates-cupped-handfulls"></td>
-                    <td>Cupped handfulls</td>
-                </tr>
-                <tr>
-                    <td>Fats</td>
-                    <td class="fats-grams"></td>
-                    <td>Grams</td>
-                    <td class="fats-thumbs"></td>
-                    <td>Thumbs</td>
-                </tr>
-            </table>
+<div class="container">
+    <div class="calculator">
+        <div id="input">
+            <label for="weight">Current weight:</label>
+            <input type="number" id="weight">
+            <select id="unit">
+                <option value="lb">lb.</option>
+                <option value="kg">kg</option>
+            </select>
+            <button id="calculate-button">Calculate</button>
         </div>
-        <div id="lose-fat" class="lose-fat">
-            <table>
-                <tr>
-                    <td>Calories</td>
-                    <td class="calories"></td>
-                </tr>
-                <tr>
-                    <td>Protein</td>
-                    <td class="protein-grams"></td>
-                    <td>Grams</td>
-                    <td class="protein-palms"></td>
-                    <td>Palms</td>
-                </tr>
-                <tr>
-                    <td>Vegetables</td>
-                    <td></td>
-                    <td></td>
-                    <td class="veggies-fists"></td>
-                </tr>
-                <tr>
-                    <td>Carbohydrates</td>
-                    <td class="carbohydrates-grams"></td>
-                    <td>Grams</td>
-                    <td class="carbohydrates-cupped-handfulls"></td>
-                    <td>Cupped handfulls</td>
-                </tr>
-                <tr>
-                    <td>Fats</td>
-                    <td class="fats-grams"></td>
-                    <td>Grams</td>
-                    <td class="fats-thumbs"></td>
-                    <td>Thumbs</td>
-                </tr>
-            </table>
-        </div>
-        <div id="gain-muscle" class="gain-muscle">
-            <table>
-                <tr>
-                    <td>Calories</td>
-                    <td class="calories"></td>
-                </tr>
-                <tr>
-                    <td>Protein</td>
-                    <td class="protein-grams"></td>
-                    <td>Grams</td>
-                    <td class="protein-palms"></td>
-                    <td>Palms</td>
-                </tr>
-                <tr>
-                    <td>Vegetables</td>
-                    <td></td>
-                    <td></td>
-                    <td class="veggies-fists"></td>
-                </tr>
-                <tr>
-                    <td>Carbohydrates</td>
-                    <td class="carbohydrates-grams"></td>
-                    <td>Grams</td>
-                    <td class="carbohydrates-cupped-handfulls"></td>
-                    <td>Cupped handfulls</td>
-                </tr>
-                <tr>
-                    <td>Fats</td>
-                    <td class="fats-grams"></td>
-                    <td>Grams</td>
-                    <td class="fats-thumbs"></td>
-                    <td>Thumbs</td>
-                </tr>
-            </table>
-        </div>
-        <div id="lose-fat-low-carb-normal-protein" class="lose-fat low-carb normal-protein">
-            <table>
-                <tr>
-                    <td>Calories</td>
-                    <td class="calories"></td>
-                </tr>
-                <tr>
-                    <td>Protein</td>
-                    <td class="protein-grams"></td>
-                    <td>Grams</td>
-                    <td class="protein-palms"></td>
-                    <td>Palms</td>
-                </tr>
-                <tr>
-                    <td>Vegetables</td>
-                    <td></td>
-                    <td></td>
-                    <td class="veggies-fists"></td>
-                </tr>
-                <tr>
-                    <td>Carbohydrates</td>
-                    <td class="carbohydrates-grams"></td>
-                    <td>Grams</td>
-                    <td class="carbohydrates-cupped-handfulls"></td>
-                    <td>Cupped handfulls</td>
-                </tr>
-                <tr>
-                    <td>Fats</td>
-                    <td class="fats-grams"></td>
-                    <td>Grams</td>
-                    <td class="fats-thumbs"></td>
-                    <td>Thumbs</td>
-                </tr>
-            </table>
-        </div>
-        <div id="lose-fat-low-carb-high-protein" class="lose-fat low-carb high-protein">
-            <table>
-                <tr>
-                    <td>Calories</td>
-                    <td class="calories"></td>
-                </tr>
-                <tr>
-                    <td>Protein</td>
-                    <td class="protein-grams"></td>
-                    <td>Grams</td>
-                    <td class="protein-palms"></td>
-                    <td>Palms</td>
-                </tr>
-                <tr>
-                    <td>Vegetables</td>
-                    <td></td>
-                    <td></td>
-                    <td class="veggies-fists"></td>
-                </tr>
-                <tr>
-                    <td>Carbohydrates</td>
-                    <td class="carbohydrates-grams"></td>
-                    <td>Grams</td>
-                    <td class="carbohydrates-cupped-handfulls"></td>
-                    <td>Cupped handfulls</td>
-                </tr>
-                <tr>
-                    <td>Fats</td>
-                    <td class="fats-grams"></td>
-                    <td>Grams</td>
-                    <td class="fats-thumbs"></td>
-                    <td>Thumbs</td>
-                </tr>
-            </table>
-        </div>
-        <div id="lose-fat-high-protein" class="lose-fat high-protein">
-            <table>
-                <tr>
-                    <td>Calories</td>
-                    <td class="calories"></td>
-                </tr>
-                <tr>
-                    <td>Protein</td>
-                    <td class="protein-grams"></td>
-                    <td>Grams</td>
-                    <td class="protein-palms"></td>
-                    <td>Palms</td>
-                </tr>
-                <tr>
-                    <td>Vegetables</td>
-                    <td></td>
-                    <td></td>
-                    <td class="veggies-fists"></td>
-                </tr>
-                <tr>
-                    <td>Carbohydrates</td>
-                    <td class="carbohydrates-grams"></td>
-                    <td>Grams</td>
-                    <td class="carbohydrates-cupped-handfulls"></td>
-                    <td>Cupped handfulls</td>
-                </tr>
-                <tr>
-                    <td>Fats</td>
-                    <td class="fats-grams"></td>
-                    <td>Grams</td>
-                    <td class="fats-thumbs"></td>
-                    <td>Thumbs</td>
-                </tr>
-            </table>
+        <div id="nutrition-tables">
+            <div id="nutrition-table-0" class="maintain normal-protein normal-fat normal-carbs">
+                <p>To maintain (Bodyweight x 14)</p>
+                <table>
+                    <tr>
+                        <td>Calories</td>
+                        <td class="calories"></td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td class="protein-grams"></td>
+                        <td>Grams</td>
+                        <td class="protein-palms"></td>
+                        <td>Palms</td>
+                    </tr>
+                    <tr>
+                        <td>Vegetables</td>
+                        <td></td>
+                        <td></td>
+                        <td class="veggies-fists"></td>
+                        <td>Fists</td>
+                    </tr>
+                    <tr>
+                        <td>Carbohydrates</td>
+                        <td class="carbohydrates-grams"></td>
+                        <td>Grams</td>
+                        <td class="carbohydrates-cupped-handfulls"></td>
+                        <td>Cupped handfulls</td>
+                    </tr>
+                    <tr>
+                        <td>Fats</td>
+                        <td class="fats-grams"></td>
+                        <td>Grams</td>
+                        <td class="fats-thumbs"></td>
+                        <td>Thumbs</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="nutrition-table-1" class="lose-fat">
+                <table>
+                    <tr>
+                        <td>Calories</td>
+                        <td class="calories"></td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td class="protein-grams"></td>
+                        <td>Grams</td>
+                        <td class="protein-palms"></td>
+                        <td>Palms</td>
+                    </tr>
+                    <tr>
+                        <td>Vegetables</td>
+                        <td></td>
+                        <td></td>
+                        <td class="veggies-fists"></td>
+                        <td>Fists</td>
+                    </tr>
+                    <tr>
+                        <td>Carbohydrates</td>
+                        <td class="carbohydrates-grams"></td>
+                        <td>Grams</td>
+                        <td class="carbohydrates-cupped-handfulls"></td>
+                        <td>Cupped handfulls</td>
+                    </tr>
+                    <tr>
+                        <td>Fats</td>
+                        <td class="fats-grams"></td>
+                        <td>Grams</td>
+                        <td class="fats-thumbs"></td>
+                        <td>Thumbs</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="nutrition-table-2" class="gain-muscle">
+                <table>
+                    <tr>
+                        <td>Calories</td>
+                        <td class="calories"></td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td class="protein-grams"></td>
+                        <td>Grams</td>
+                        <td class="protein-palms"></td>
+                        <td>Palms</td>
+                    </tr>
+                    <tr>
+                        <td>Vegetables</td>
+                        <td></td>
+                        <td></td>
+                        <td class="veggies-fists"></td>
+                        <td>Fists</td>
+                    </tr>
+                    <tr>
+                        <td>Carbohydrates</td>
+                        <td class="carbohydrates-grams"></td>
+                        <td>Grams</td>
+                        <td class="carbohydrates-cupped-handfulls"></td>
+                        <td>Cupped handfulls</td>
+                    </tr>
+                    <tr>
+                        <td>Fats</td>
+                        <td class="fats-grams"></td>
+                        <td>Grams</td>
+                        <td class="fats-thumbs"></td>
+                        <td>Thumbs</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="nutrition-table-3" class="lose-fat low-carb normal-protein">
+                <table>
+                    <tr>
+                        <td>Calories</td>
+                        <td class="calories"></td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td class="protein-grams"></td>
+                        <td>Grams</td>
+                        <td class="protein-palms"></td>
+                        <td>Palms</td>
+                    </tr>
+                    <tr>
+                        <td>Vegetables</td>
+                        <td></td>
+                        <td></td>
+                        <td class="veggies-fists"></td>
+                        <td>Fists</td>
+                    </tr>
+                    <tr>
+                        <td>Carbohydrates</td>
+                        <td class="carbohydrates-grams"></td>
+                        <td>Grams</td>
+                        <td class="carbohydrates-cupped-handfulls"></td>
+                        <td>Cupped handfulls</td>
+                    </tr>
+                    <tr>
+                        <td>Fats</td>
+                        <td class="fats-grams"></td>
+                        <td>Grams</td>
+                        <td class="fats-thumbs"></td>
+                        <td>Thumbs</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="nutrition-table-4" class="lose-fat low-carb high-protein">
+                <table>
+                    <tr>
+                        <td>Calories</td>
+                        <td class="calories"></td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td class="protein-grams"></td>
+                        <td>Grams</td>
+                        <td class="protein-palms"></td>
+                        <td>Palms</td>
+                    </tr>
+                    <tr>
+                        <td>Vegetables</td>
+                        <td></td>
+                        <td></td>
+                        <td class="veggies-fists"></td>
+                        <td>Fists</td>
+                    </tr>
+                    <tr>
+                        <td>Carbohydrates</td>
+                        <td class="carbohydrates-grams"></td>
+                        <td>Grams</td>
+                        <td class="carbohydrates-cupped-handfulls"></td>
+                        <td>Cupped handfulls</td>
+                    </tr>
+                    <tr>
+                        <td>Fats</td>
+                        <td class="fats-grams"></td>
+                        <td>Grams</td>
+                        <td class="fats-thumbs"></td>
+                        <td>Thumbs</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="nutrition-table-5" class="lose-fat high-protein">
+                <table>
+                    <tr>
+                        <td>Calories</td>
+                        <td class="calories"></td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td class="protein-grams"></td>
+                        <td>Grams</td>
+                        <td class="protein-palms"></td>
+                        <td>Palms</td>
+                    </tr>
+                    <tr>
+                        <td>Vegetables</td>
+                        <td></td>
+                        <td></td>
+                        <td class="veggies-fists"></td>
+                        <td>Fists</td>
+                    </tr>
+                    <tr>
+                        <td>Carbohydrates</td>
+                        <td class="carbohydrates-grams"></td>
+                        <td>Grams</td>
+                        <td class="carbohydrates-cupped-handfulls"></td>
+                        <td>Cupped handfulls</td>
+                    </tr>
+                    <tr>
+                        <td>Fats</td>
+                        <td class="fats-grams"></td>
+                        <td>Grams</td>
+                        <td class="fats-thumbs"></td>
+                        <td>Thumbs</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </div>
