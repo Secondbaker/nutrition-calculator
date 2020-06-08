@@ -11,6 +11,8 @@ function insertCalculator() {
         $(".nutritional-calculator").html(data);
         //Add the click function to the calculator
         $('#calculate-button').click(calculate);
+        $('#weight').on('input', calculate);
+        $('#unit').change(calculate);
     }); 
 }
 
