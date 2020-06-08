@@ -2,6 +2,7 @@ const KGToLB = 2.20462262;
 const CaloriesPerProteinGram = 4;
 const CaloresPerFatGram = 9;
 const CaloriesPerCarbohydrateGram = 4;
+const RoundingFactor = .25;
 
 $(document).ready(insertCalculator);
 
@@ -40,7 +41,7 @@ function calculate ()
                 {
                     calories = weight * 16;
                 }
-                $(this).find('.calories').html(calories);
+                $(this).find('.calories').html(roundToNearest(calories, RoundingFactor));
     
                 //next we'll figure out the protein, since it relies only on weight
                 let proteinGrams = 0;
@@ -54,7 +55,7 @@ function calculate ()
                     proteinGrams = weight;
                 }
                 proteinPalms = proteinGrams / 30;
-                $(this).find('.protein-grams').html(proteinGrams);
+                $(this).find('.protein-grams').html(roundToNearest(proteinGrams, RoundingFactor));
                 $(this).find('.protein-palms').html(proteinPalms);
     
                 //next we'll need to get the carbohydrates
@@ -107,6 +108,14 @@ function calculate ()
         });
     
     
+}
+
+//returns a number rounded to nearest roundTo
+function roundToNearest (number, roundTo)
+{
+    roundTo = 1 / roundTo;
+
+    return Math.round(number * roundTo) / roundTo;
 }
 
 //makes sure the weight unit is pounds, regardless of which unit is selected to begin with
