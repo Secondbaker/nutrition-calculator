@@ -42,8 +42,14 @@ function insertCalculator() {
         console.log($('.item-label'));
         $('.item-label').each(function() {
             $(this).fitText(1);
-            console.log('here');
         });
+        $('.item-number').each(function() {
+            $(this).fitText(1);
+        })
+        $('.item-unit').each(function() {
+            $(this).fitText(1);
+        })
+
     }); 
 }
 
