@@ -7,6 +7,22 @@ const RoundingFactor = .25;
 $(document).ready(insertCalculator);
 
 function insertCalculator() {
+    // Get HTML head element 
+    var head = document.getElementsByTagName('HEAD')[0];  
+  
+    // Create new link Element 
+    var link = document.createElement('link'); 
+
+    // set the attributes for link element  
+    link.rel = 'nutritional-calculator-styles';  
+  
+    link.type = 'text/css'; 
+  
+    link.href = 'nutritional-calculator-styles.css';  
+
+    // Append link element to HTML head 
+    head.appendChild(link); 
+    
     $('.nutritional-calculator').load("/calculator.html", function(data) {
         //Put the calculator in the page
         $(".nutritional-calculator").html(data);
@@ -15,12 +31,12 @@ function insertCalculator() {
         $('#weight').on('input', calculate);
         $('#unit').change(calculate);
     }); 
+    calculate();
 }
 
 function calculate ()
 {
     
-        console.log("clicked");
         let weight = weightToPounds($('#weight').val(), $('#unit').children("option:selected").val());
     
         $('#nutrition-tables').children().each(function fillTable() {
@@ -61,7 +77,6 @@ function calculate ()
                 //next we'll need to get the carbohydrates
                 //carbohydrates and fats will be calculated based on a percentage of what calories remain
                 let fatAndCarbCalories = calories - (proteinGrams * CaloriesPerProteinGram);
-                console.log(fatAndCarbCalories);
                 let carbCalories = 0;
                 if(classes.includes('low-carb'))
                 {
@@ -121,8 +136,6 @@ function roundToNearest (number, roundTo)
 //makes sure the weight unit is pounds, regardless of which unit is selected to begin with
 function weightToPounds (weight, unit)
 {
-    console.log(weight);
-    console.log(unit);
     if(unit == "lb")
     {
         return weight;
