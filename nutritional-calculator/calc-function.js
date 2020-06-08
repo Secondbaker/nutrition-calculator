@@ -4,26 +4,16 @@ const CaloresPerFatGram = 9;
 const CaloriesPerCarbohydrateGram = 4;
 const RoundingFactor = .25;
 
+var scripts = document.getElementsByTagName("script");
+var src = scripts[scripts.length-1].src;
+src = src.substr(0, src.indexOf('calc-function.js'));
+
 $(document).ready(insertCalculator);
 
 function insertCalculator() {
-    // Get HTML head element 
-    var head = document.getElementsByTagName('HEAD')[0];  
-  
-    // Create new link Element 
-    var link = document.createElement('link'); 
-
-    // set the attributes for link element  
-    link.rel = 'nutritional-calculator-styles';  
-  
-    link.type = 'text/css'; 
-  
-    link.href = 'nutritional-calculator-styles.css';  
-
-    // Append link element to HTML head 
-    head.appendChild(link); 
     
-    $('.nutritional-calculator').load("/calculator.html", function(data) {
+   
+    $('.nutritional-calculator').load(src + "calculator.html", function(data) {
         //Put the calculator in the page
         $(".nutritional-calculator").html(data);
         //Add the click function to the calculator
@@ -31,7 +21,21 @@ function insertCalculator() {
         $('#weight').on('input', calculate);
         $('#unit').change(calculate);
     }); 
-    calculate();
+    // Get HTML head element 
+    var head = document.getElementsByTagName('HEAD')[0];  
+  
+    // Create new link Element 
+    var link = document.createElement('link'); 
+
+    // set the attributes for link element  
+    link.rel = 'stylesheet';  
+  
+    link.type = 'text/css'; 
+  
+    link.href = src + 'nutritional-calculator-styles.css';  
+
+    // Append link element to HTML head 
+    head.appendChild(link); 
 }
 
 function calculate ()

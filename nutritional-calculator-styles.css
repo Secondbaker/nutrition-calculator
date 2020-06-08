@@ -1,8 +1,0 @@
-div.calc-table-container {
-    display:grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    background-color: black;
-}
-.item {
-
-}
