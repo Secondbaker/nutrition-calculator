@@ -39,15 +39,14 @@ function insertCalculator() {
         $('#calculate-button').click(calculate);
         $('#weight').on('input', calculate);
         $('#unit').change(calculate);
-        console.log($('.item-label'));
         $('.item-label').each(function() {
-            $(this).fitText(1);
+            $(this).fitText(.7);
         });
         $('.item-number').each(function() {
-            $(this).fitText(1);
+            $(this).fitText(.6);
         })
         $('.item-unit').each(function() {
-            $(this).fitText(1);
+            $(this).fitText(.7);
         })
 
     }); 
