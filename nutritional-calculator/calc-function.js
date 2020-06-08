@@ -41,7 +41,7 @@ function insertCalculator() {
         $('#unit').change(calculate);
         console.log($('.item-label'));
         $('.item-label').each(function() {
-            $(this).fitText(.9);
+            $(this).fitText(1);
             console.log('here');
         });
     }); 
