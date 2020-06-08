@@ -16,7 +16,6 @@ div.calc-table-container {
     display: inline-block;
     padding: 15px 10px 14px;
     margin: 5px;
-    cursor: pointer;
     width: auto;
 }
 .item-number {
@@ -35,7 +34,6 @@ div.calc-table-container {
     margin-right: 0;
     margin-top: 5px;
     margin-bottom: 5px;
-    cursor: pointer;
     width: auto;
 }
 .item-unit {
@@ -53,6 +51,5 @@ div.calc-table-container {
     margin-right: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    cursor: pointer;
     width: auto;
 }

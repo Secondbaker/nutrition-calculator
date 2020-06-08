@@ -11,7 +11,26 @@ src = src.substr(0, src.indexOf('calc-function.js'));
 $(document).ready(insertCalculator);
 
 function insertCalculator() {
-    
+    // Get HTML head element 
+    var head = document.getElementsByTagName('HEAD')[0];  
+  
+    // Create new link Element 
+    var cssLink = document.createElement('link'); 
+
+    //Add my stylesheet
+    // set the attributes for link element  
+    cssLink.rel = 'stylesheet';  
+    cssLink.type = 'text/css'; 
+    cssLink.href = src + 'nutritional-calculator-styles.css';
+    // Append link element to HTML head 
+    head.appendChild(cssLink); 
+
+    var fitTextLink = document.createElement('link'); 
+    //Add FitText
+    fitTextLink.rel = 'script';
+    fitTextLink.type = 'text/js';
+    fitTextLink.href = src + 'jquery.fittext.js';
+    head.appendChild(fitTextLink);
    
     $('.nutritional-calculator').load(src + "calculator.html", function(data) {
         //Put the calculator in the page
@@ -20,22 +39,12 @@ function insertCalculator() {
         $('#calculate-button').click(calculate);
         $('#weight').on('input', calculate);
         $('#unit').change(calculate);
+        console.log($('.item-label'));
+        $('.item-label').each(function() {
+            $(this).fitText(.9);
+            console.log('here');
+        });
     }); 
-    // Get HTML head element 
-    var head = document.getElementsByTagName('HEAD')[0];  
-  
-    // Create new link Element 
-    var link = document.createElement('link'); 
-
-    // set the attributes for link element  
-    link.rel = 'stylesheet';  
-  
-    link.type = 'text/css'; 
-  
-    link.href = src + 'nutritional-calculator-styles.css';  
-
-    // Append link element to HTML head 
-    head.appendChild(link); 
 }
 
 function calculate ()
@@ -61,6 +70,7 @@ function calculate ()
                 {
                     calories = weight * 16.0;
                 }
+                
                 $(this).find('.calories').html(roundToNearest(calories, RoundingFactor));
     
                 //next we'll figure out the protein, since it relies only on weight
@@ -159,3 +169,47 @@ function proteinToPalms (protein)
 {
     return protein / 30;
 }
+
+/*global jQuery */
+/*!
+* FitText.js 1.2
+*
+* Copyright 2011, Dave Rupert http://daverupert.com
+* Released under the WTFPL license
+* http://sam.zoy.org/wtfpl/
+*
+* Date: Thu May 05 14:23:00 2011 -0600
+*/
+
+(function( $ ){
+
+    $.fn.fitText = function( kompressor, options ) {
+  
+      // Setup options
+      var compressor = kompressor || 1,
+          settings = $.extend({
+            'minFontSize' : Number.NEGATIVE_INFINITY,
+            'maxFontSize' : Number.POSITIVE_INFINITY
+          }, options);
+  
+      return this.each(function(){
+  
+        // Store the object
+        var $this = $(this);
+  
+        // Resizer() resizes items based on the object width divided by the compressor * 10
+        var resizer = function () {
+          $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+        };
+  
+        // Call once to set.
+        resizer();
+  
+        // Call on resize. Opera debounces their resize by default.
+        $(window).on('resize.fittext orientationchange.fittext', resizer);
+  
+      });
+  
+    };
+  
+  })( jQuery );
