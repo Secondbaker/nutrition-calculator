@@ -1,9 +1,10 @@
 div.calc-table-container {
     display:grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    background-color: darkgrey;
+    background-color: lightgrey;
 }
 .item-label {
+    text-align: center;
     font-weight: bold;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -11,7 +12,7 @@ div.calc-table-container {
     border: 4px solid #af1015;
     color: #af1015;
     background: white;
-    outline: none;
+    outline: 1px solid darkgrey;
     position: relative;
     display: inline-block;
     padding: 15px 10px 14px;
@@ -19,14 +20,15 @@ div.calc-table-container {
     width: auto;
 }
 .item-number {
+    text-align: right;
     font-weight: bold;
     letter-spacing: 3px;
     text-transform: uppercase;
     text-decoration: none;
-    border: 1px solid darkgrey;
+    border: 1px solid lightgrey;
     color: black;
     background: white;
-    outline: none;
+    outline: 1px solid darkgrey;
     position: relative;
     display: inline-block;
     padding: 15px 10px 14px;
@@ -40,10 +42,10 @@ div.calc-table-container {
     font-weight: bold;
     letter-spacing: 3px;
     text-decoration: none;
-    border: 1px solid darkgrey;
+    border: 1px solid lightgrey;
     color: #af1015;
     background: white;
-    outline: none;
+    outline: 1px solid darkgrey;
     position: relative;
     display: inline-block;
     padding: 15px 10px 14px;
