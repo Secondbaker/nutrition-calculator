@@ -46,7 +46,7 @@ function insertCalculator() {
             $(this).fitText(.6);
         });
         $('.item-unit').each(function() {
-            $(this).fitText(1.2);
+            $(this).fitText(.8);
         });
         $('.small-unit').each(function() {
             $(this).fitText(1.5);
