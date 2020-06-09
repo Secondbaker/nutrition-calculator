@@ -11,22 +11,42 @@
             <button id="calculate-button">Calculate</button>
         </div>
         <div id="nutrition-tables">
-            <div id="nutrition-table-0" class="maintain normal-protein normal-fat normal-carbs">
+            <div class="nutrition-table maintain normal-protein normal-fat normal-carbs">
                 <h3><strong>To maintain (Bodyweight x 14)</strong></h3>
                 <div class="calc-table-container">
-                    <div class="item-label">Calories</div>
-                    <div class="calories item-number"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item-label">Protein</div>
-                    <div class="protein-grams item-number"></div>
-                    <div class="item-unit">Grams</div>
-                    <div class="protein-palms item-number"></div>
-                    <div class="item-unit">Palms</div>
-                    <div class="item-label">Carbs</div>
-                    <div class="carbohydrate-grams item-number"></div>
-                    <div class="item-unit">Grams</div>
+                    <div class="cal">
+                        <div class="item-label">
+                            <div class="rotation">Calories</div>
+                        </div>
+                        <div class="calories item item-number"></div>
+                    </div>
+                    <div class="pro">
+                        <div class="item-label">Protein</div>
+                        <div class="protein-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="protein-palms item item-number"></div>
+                        <div class="item-unit">Palms</div>
+                    </div>
+                    <div class="veg">
+                        <div class="item-label">Veggies</div>
+                        <div class="veggies-fists item item-number veg-amount"></div>
+                        <div class="item-unit veg-unit">Fists</div>
+                    </div>
+                    <div class="carb">
+                        <div class="item-label">Carbohydrates</div>
+                        <div class="carbohydrates-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="carbohydrates-cupped-handfulls item item-number"></div>
+                        <div class="item-unit small-unit">Cupped Handfulls</div>
+                    </div>
+                    <div class="fat">
+                        <div class="item-label">Fat</div>
+                        <div class="fats-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="fats-thumbs item item-number"></div>
+                        <div class="item-unit small-unit">Thumbs</div>
+                    </div>
+                    
                 </div>
                 <table>
                     <tr>

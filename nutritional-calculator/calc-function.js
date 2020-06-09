@@ -40,13 +40,16 @@ function insertCalculator() {
         $('#weight').on('input', calculate);
         $('#unit').change(calculate);
         $('.item-label').each(function() {
-            $(this).fitText(.7);
+            $(this).fitText(1.2);
         });
         $('.item-number').each(function() {
             $(this).fitText(.6);
-        })
+        });
         $('.item-unit').each(function() {
-            $(this).fitText(.7);
+            $(this).fitText(1.2);
+        });
+        $('.small-unit').each(function() {
+            $(this).fitText(1.2);
         })
 
     }); 

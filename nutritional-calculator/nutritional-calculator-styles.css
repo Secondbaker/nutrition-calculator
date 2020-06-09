@@ -1,7 +1,48 @@
-div.calc-table-container {
+.calc-table-container {
     display:grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    background-color: lightgrey;
+    grid-template-areas:
+    "cal cal cal cal cal"
+    "pro pro pro pro pro"
+    "veg veg veg veg veg"
+    "carb carb carb carb carb"
+    "fat fat fat fat fat";
+}
+.cal {
+    grid-area: cal;
+    display:grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+.pro {
+    grid-area: pro;
+    display:grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+.carb {
+    grid-area: carb;
+    display:grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+.fat {
+    grid-area: fat;
+    display:grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+.veg {
+    grid-area: veg;
+    display:grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-areas:
+    "a b c d e"
+}
+.veg-amount {
+    grid-area: d;
+}
+.veg-unit {
+    grid-area: e;
+}
+.rotation {
+    -webkit-transform: rotate(-2deg);
 }
 .item-label {
     text-align: center;
@@ -12,12 +53,26 @@ div.calc-table-container {
     border: 4px solid #af1015;
     color: #af1015;
     background: white;
-    outline: 1px solid darkgrey;
+    outline: none;
     position: relative;
     display: inline-block;
     padding: 15px 10px 14px;
     margin: 5px;
     width: auto;
+    -webkit-transition: all 0.5s;
+    z-index: 1;
+}
+.rotation:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #af1015;
+    background-color: #af1015;
+    left: 4px;
+    top: 4px;
+    z-index: -1;
+    content: '';
+    -webkit-transition: all 0.5s;
 }
 .item-number {
     text-align: right;
@@ -54,4 +109,7 @@ div.calc-table-container {
     margin-top: 5px;
     margin-bottom: 5px;
     width: auto;
+}
+.small-unit {
+    white-space: nowrap;
 }
