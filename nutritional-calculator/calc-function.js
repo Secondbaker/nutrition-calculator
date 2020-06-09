@@ -40,7 +40,7 @@ function insertCalculator() {
         $('#weight').on('input', calculate);
         $('#unit').change(calculate);
         $('.item-label').each(function() {
-            $(this).fitText(1.2);
+            $(this).fitText(1.5);
         });
         $('.item-number').each(function() {
             $(this).fitText(.6);
@@ -49,7 +49,7 @@ function insertCalculator() {
             $(this).fitText(1.2);
         });
         $('.small-unit').each(function() {
-            $(this).fitText(1.2);
+            $(this).fitText(1.5);
         })
 
     }); 
