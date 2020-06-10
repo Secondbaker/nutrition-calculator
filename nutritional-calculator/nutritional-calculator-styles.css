@@ -2,6 +2,10 @@
     display:grid;
     justify-content: space-evenly;
 }
+.calculator {
+    display:grid;
+    justify-content: space-evenly;
+}
 .calc-table-container {
     
     display:grid;

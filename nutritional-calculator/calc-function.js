@@ -3,6 +3,9 @@ const CaloriesPerProteinGram = 4;
 const CaloresPerFatGram = 9;
 const CaloriesPerCarbohydrateGram = 4;
 const RoundingFactor = .25;
+const ProteinPerPalm = 30.0;
+const CarbohydratesPerCuppedHandfull = 35.0;
+const FatPerThumb = 15.0;
 
 var scripts = document.getElementsByTagName("script");
 var src = scripts[scripts.length-1].src;
@@ -57,8 +60,6 @@ function insertCalculator() {
 
 function calculate ()
 {
-    console.log('calculate');
-    console.log($('.nutrition-tables').children());
         let weight = weightToPounds($('#weight').val(), $('#unit').children("option:selected").val());
     
         $('.nutrition-tables').children().each(function fillTable() {
@@ -79,8 +80,6 @@ function calculate ()
                 {
                     calories = weight * 16.0;
                 }
-                console.log(this);
-                console.log($(this).find('.calories'));
                 $(this).find('.calories').html(roundToNearest(calories, RoundingFactor));
     
                 //next we'll figure out the protein, since it relies only on weight
@@ -94,7 +93,7 @@ function calculate ()
                 {
                     proteinGrams = weight;
                 }
-                proteinPalms = proteinGrams / 30.0;
+                proteinPalms = proteinGrams / ProteinPerPalm;
                 $(this).find('.protein-grams').html(roundToNearest(proteinGrams, RoundingFactor));
                 $(this).find('.protein-palms').html(roundToNearest(proteinPalms, RoundingFactor));
     
@@ -112,7 +111,7 @@ function calculate ()
                 }
     
                 let carbohydratesGrams = carbCalories / CaloriesPerCarbohydrateGram;
-                let carbohydratesCuppedHandfulls = carbohydratesGrams / 35.0;
+                let carbohydratesCuppedHandfulls = carbohydratesGrams / CarbohydratesPerCuppedHandfull;
                 $(this).find('.carbohydrates-grams').html(roundToNearest(carbohydratesGrams, RoundingFactor));
                 $(this).find('.carbohydrates-cupped-handfulls').html(roundToNearest(carbohydratesCuppedHandfulls, RoundingFactor));
     
@@ -136,7 +135,7 @@ function calculate ()
                 //finally we get the fats
                 let fatCalories = fatAndCarbCalories - carbCalories;
                 let fatGrams = fatCalories / CaloresPerFatGram;
-                let fatThumbs = fatGrams / 15.0;
+                let fatThumbs = fatGrams / FatPerThumb;
                 $(this).find('.fats-grams').html(roundToNearest(fatGrams, RoundingFactor));
                 $(this).find('.fats-thumbs').html(roundToNearest(fatThumbs, RoundingFactor));
             }
@@ -168,16 +167,6 @@ function weightToPounds (weight, unit)
     {
         return weight * KGToLB;
     }
-}
-//takes a weight in pounds and returns the normal amount of protein for that weight
-function normalProtein (weight)
-{
-    return weight;
-}
-//takes an amount of protein in grams and returns that amount in palms
-function proteinToPalms (protein)
-{
-    return protein / 30;
 }
 
 /*global jQuery */
