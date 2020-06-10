@@ -49,7 +49,7 @@ function insertCalculator() {
             $(this).fitText(.8);
         });
         $('.small-unit').each(function() {
-            $(this).fitText(1.5);
+            $(this).fitText(1.1);
         })
 
     }); 
@@ -57,10 +57,11 @@ function insertCalculator() {
 
 function calculate ()
 {
-    
+    console.log('calculate');
+    console.log($('.nutrition-tables').children());
         let weight = weightToPounds($('#weight').val(), $('#unit').children("option:selected").val());
     
-        $('#nutrition-tables').children().each(function fillTable() {
+        $('.nutrition-tables').children().each(function fillTable() {
             let classes = $(this).attr('class');
             try
             {
@@ -78,7 +79,8 @@ function calculate ()
                 {
                     calories = weight * 16.0;
                 }
-                
+                console.log(this);
+                console.log($(this).find('.calories'));
                 $(this).find('.calories').html(roundToNearest(calories, RoundingFactor));
     
                 //next we'll figure out the protein, since it relies only on weight

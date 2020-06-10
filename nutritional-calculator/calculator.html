@@ -10,8 +10,8 @@
             </select>
             <a id="calculate-button" class="btn-red">Calculate</a>
         </div>
-        <div id="nutrition-tables">
-            <div class="nutrition-table maintain normal-protein normal-fat normal-carbs">
+        <div class="nutrition-tables">
+            <div class="nutrition-table-0 maintain normal-protein normal-fat normal-carbs">
                 <h3><strong>To maintain (Bodyweight x 14)</strong></h3>
                 <div class="calc-table-container">
                     <div class="cal">
@@ -56,225 +56,251 @@
                     </div>
                     
                 </div>
-                <table>
-                    <tr>
-                        <td>Calories</td>
-                        <td class="calories"></td>
-                    </tr>
-                    <tr>
-                        <td>Protein</td>
-                        <td class="protein-grams"></td>
-                        <td>Grams</td>
-                        <td class="protein-palms"></td>
-                        <td>Palms</td>
-                    </tr>
-                    <tr>
-                        <td>Vegetables</td>
-                        <td></td>
-                        <td></td>
-                        <td class="veggies-fists"></td>
-                        <td>Fists</td>
-                    </tr>
-                    <tr>
-                        <td>Carbohydrates</td>
-                        <td class="carbohydrates-grams"></td>
-                        <td>Grams</td>
-                        <td class="carbohydrates-cupped-handfulls"></td>
-                        <td>Cupped handfulls</td>
-                    </tr>
-                    <tr>
-                        <td>Fats</td>
-                        <td class="fats-grams"></td>
-                        <td>Grams</td>
-                        <td class="fats-thumbs"></td>
-                        <td>Thumbs</td>
-                    </tr>
-                </table>
             </div>
-            <h3><strong>To lose fat (Bodyweight x 12)</strong></h3>
-            <div id="nutrition-table-1" class="lose-fat">
-                <table>
-                    <tr>
-                        <td>Calories</td>
-                        <td class="calories"></td>
-                    </tr>
-                    <tr>
-                        <td>Protein</td>
-                        <td class="protein-grams"></td>
-                        <td>Grams</td>
-                        <td class="protein-palms"></td>
-                        <td>Palms</td>
-                    </tr>
-                    <tr>
-                        <td>Vegetables</td>
-                        <td></td>
-                        <td></td>
-                        <td class="veggies-fists"></td>
-                        <td>Fists</td>
-                    </tr>
-                    <tr>
-                        <td>Carbohydrates</td>
-                        <td class="carbohydrates-grams"></td>
-                        <td>Grams</td>
-                        <td class="carbohydrates-cupped-handfulls"></td>
-                        <td>Cupped handfulls</td>
-                    </tr>
-                    <tr>
-                        <td>Fats</td>
-                        <td class="fats-grams"></td>
-                        <td>Grams</td>
-                        <td class="fats-thumbs"></td>
-                        <td>Thumbs</td>
-                    </tr>
-                </table>
+            
+            <hr class="table">
+
+            <div class="nutrition-table-1 lose-fat">
+                <h3><strong>To lose fat (Bodyweight x 12)</strong></h3>
+                <div class="calc-table-container">
+                    <div class="cal">
+                        <div class="rotation">
+                            <div class="item-label">Calories</div>
+                        </div>
+                        <div class="calories item item-number"></div>
+                    </div>
+                    <div class="pro">
+                        <div class='rotation'>
+                            <div class="item-label">Protein</div>
+                        </div>
+                        <div class="protein-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="protein-palms item item-number"></div>
+                        <div class="item-unit">Palms</div>
+                    </div>
+                    <div class="veg">
+                        <div class="rotation">
+                            <div class="item-label">Veggies</div>
+                        </div>
+                        <div class="veggies-fists item item-number veg-amount"></div>
+                        <div class="item-unit veg-unit">Fists</div>
+                    </div>
+                    <div class="carb">
+                        <div class="rotation">
+                            <div class="item-label">Carbohydrates</div>
+                        </div>
+                        <div class="carbohydrates-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="carbohydrates-cupped-handfulls item item-number"></div>
+                        <div class="item-unit small-unit">Cupped Handfulls</div>
+                    </div>
+                    <div class="fat">
+                        <div class="rotation">
+                            <div class="item-label">Fat</div>
+                        </div>
+                        <div class="fats-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="fats-thumbs item item-number"></div>
+                        <div class="item-unit">Thumbs</div>
+                    </div>
+                    
+                </div>
             </div>
-            <h3><strong>To gain muscle (Bodyweight x 16)</strong></h3>
+            
+            <hr class="table">
+
             <div id="nutrition-table-2" class="gain-muscle">
-                <table>
-                    <tr>
-                        <td>Calories</td>
-                        <td class="calories"></td>
-                    </tr>
-                    <tr>
-                        <td>Protein</td>
-                        <td class="protein-grams"></td>
-                        <td>Grams</td>
-                        <td class="protein-palms"></td>
-                        <td>Palms</td>
-                    </tr>
-                    <tr>
-                        <td>Vegetables</td>
-                        <td></td>
-                        <td></td>
-                        <td class="veggies-fists"></td>
-                        <td>Fists</td>
-                    </tr>
-                    <tr>
-                        <td>Carbohydrates</td>
-                        <td class="carbohydrates-grams"></td>
-                        <td>Grams</td>
-                        <td class="carbohydrates-cupped-handfulls"></td>
-                        <td>Cupped handfulls</td>
-                    </tr>
-                    <tr>
-                        <td>Fats</td>
-                        <td class="fats-grams"></td>
-                        <td>Grams</td>
-                        <td class="fats-thumbs"></td>
-                        <td>Thumbs</td>
-                    </tr>
-                </table>
+                <h3><strong>To gain muscle (Bodyweight x 16)</strong></h3>
+                <div class="calc-table-container">
+                    <div class="cal">
+                        <div class="rotation">
+                            <div class="item-label">Calories</div>
+                        </div>
+                        <div class="calories item item-number"></div>
+                    </div>
+                    <div class="pro">
+                        <div class='rotation'>
+                            <div class="item-label">Protein</div>
+                        </div>
+                        <div class="protein-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="protein-palms item item-number"></div>
+                        <div class="item-unit">Palms</div>
+                    </div>
+                    <div class="veg">
+                        <div class="rotation">
+                            <div class="item-label">Veggies</div>
+                        </div>
+                        <div class="veggies-fists item item-number veg-amount"></div>
+                        <div class="item-unit veg-unit">Fists</div>
+                    </div>
+                    <div class="carb">
+                        <div class="rotation">
+                            <div class="item-label">Carbohydrates</div>
+                        </div>
+                        <div class="carbohydrates-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="carbohydrates-cupped-handfulls item item-number"></div>
+                        <div class="item-unit small-unit">Cupped Handfulls</div>
+                    </div>
+                    <div class="fat">
+                        <div class="rotation">
+                            <div class="item-label">Fat</div>
+                        </div>
+                        <div class="fats-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="fats-thumbs item item-number"></div>
+                        <div class="item-unit">Thumbs</div>
+                    </div>
+                    
+                </div>
             </div>
-            <h3><strong>To lose fat, low carb normal protein (Bodyweight x 14)</strong></h3>
+            
+            <hr class="table">
+
             <div id="nutrition-table-3" class="lose-fat low-carb normal-protein">
-                <table>
-                    <tr>
-                        <td>Calories</td>
-                        <td class="calories"></td>
-                    </tr>
-                    <tr>
-                        <td>Protein</td>
-                        <td class="protein-grams"></td>
-                        <td>Grams</td>
-                        <td class="protein-palms"></td>
-                        <td>Palms</td>
-                    </tr>
-                    <tr>
-                        <td>Vegetables</td>
-                        <td></td>
-                        <td></td>
-                        <td class="veggies-fists"></td>
-                        <td>Fists</td>
-                    </tr>
-                    <tr>
-                        <td>Carbohydrates</td>
-                        <td class="carbohydrates-grams"></td>
-                        <td>Grams</td>
-                        <td class="carbohydrates-cupped-handfulls"></td>
-                        <td>Cupped handfulls</td>
-                    </tr>
-                    <tr>
-                        <td>Fats</td>
-                        <td class="fats-grams"></td>
-                        <td>Grams</td>
-                        <td class="fats-thumbs"></td>
-                        <td>Thumbs</td>
-                    </tr>
-                </table>
+                <h3><strong>To lose fat, low carb normal protein (Bodyweight x 12)</strong></h3>
+                <div class="calc-table-container">
+                    <div class="cal">
+                        <div class="rotation">
+                            <div class="item-label">Calories</div>
+                        </div>
+                        <div class="calories item item-number"></div>
+                    </div>
+                    <div class="pro">
+                        <div class='rotation'>
+                            <div class="item-label">Protein</div>
+                        </div>
+                        <div class="protein-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="protein-palms item item-number"></div>
+                        <div class="item-unit">Palms</div>
+                    </div>
+                    <div class="veg">
+                        <div class="rotation">
+                            <div class="item-label">Veggies</div>
+                        </div>
+                        <div class="veggies-fists item item-number veg-amount"></div>
+                        <div class="item-unit veg-unit">Fists</div>
+                    </div>
+                    <div class="carb">
+                        <div class="rotation">
+                            <div class="item-label">Carbohydrates</div>
+                        </div>
+                        <div class="carbohydrates-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="carbohydrates-cupped-handfulls item item-number"></div>
+                        <div class="item-unit small-unit">Cupped Handfulls</div>
+                    </div>
+                    <div class="fat">
+                        <div class="rotation">
+                            <div class="item-label">Fat</div>
+                        </div>
+                        <div class="fats-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="fats-thumbs item item-number"></div>
+                        <div class="item-unit">Thumbs</div>
+                    </div>
+                    
+                </div>
             </div>
-            <h3><strong>To lose fat, low carb high protein (Bodyweight x 14)</strong></h3>
+
+            <hr class="table">
+            
             <div id="nutrition-table-4" class="lose-fat low-carb high-protein">
-                <table>
-                    <tr>
-                        <td>Calories</td>
-                        <td class="calories"></td>
-                    </tr>
-                    <tr>
-                        <td>Protein</td>
-                        <td class="protein-grams"></td>
-                        <td>Grams</td>
-                        <td class="protein-palms"></td>
-                        <td>Palms</td>
-                    </tr>
-                    <tr>
-                        <td>Vegetables</td>
-                        <td></td>
-                        <td></td>
-                        <td class="veggies-fists"></td>
-                        <td>Fists</td>
-                    </tr>
-                    <tr>
-                        <td>Carbohydrates</td>
-                        <td class="carbohydrates-grams"></td>
-                        <td>Grams</td>
-                        <td class="carbohydrates-cupped-handfulls"></td>
-                        <td>Cupped handfulls</td>
-                    </tr>
-                    <tr>
-                        <td>Fats</td>
-                        <td class="fats-grams"></td>
-                        <td>Grams</td>
-                        <td class="fats-thumbs"></td>
-                        <td>Thumbs</td>
-                    </tr>
-                </table>
+                <h3><strong>To lose fat, low carb high protein (Bodyweight x 12)</strong></h3>
+                <div class="calc-table-container">
+                    <div class="cal">
+                        <div class="rotation">
+                            <div class="item-label">Calories</div>
+                        </div>
+                        <div class="calories item item-number"></div>
+                    </div>
+                    <div class="pro">
+                        <div class='rotation'>
+                            <div class="item-label">Protein</div>
+                        </div>
+                        <div class="protein-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="protein-palms item item-number"></div>
+                        <div class="item-unit">Palms</div>
+                    </div>
+                    <div class="veg">
+                        <div class="rotation">
+                            <div class="item-label">Veggies</div>
+                        </div>
+                        <div class="veggies-fists item item-number veg-amount"></div>
+                        <div class="item-unit veg-unit">Fists</div>
+                    </div>
+                    <div class="carb">
+                        <div class="rotation">
+                            <div class="item-label">Carbohydrates</div>
+                        </div>
+                        <div class="carbohydrates-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="carbohydrates-cupped-handfulls item item-number"></div>
+                        <div class="item-unit small-unit">Cupped Handfulls</div>
+                    </div>
+                    <div class="fat">
+                        <div class="rotation">
+                            <div class="item-label">Fat</div>
+                        </div>
+                        <div class="fats-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="fats-thumbs item item-number"></div>
+                        <div class="item-unit">Thumbs</div>
+                    </div>
+                    
+                </div>
             </div>
-            <h3><strong>To lose fat, high protein normal otherwise (Bodyweight x 14)</strong></h3>
+            
+            <hr class="table">
+
             <div id="nutrition-table-5" class="lose-fat high-protein">
-                <table>
-                    <tr>
-                        <td>Calories</td>
-                        <td class="calories"></td>
-                    </tr>
-                    <tr>
-                        <td>Protein</td>
-                        <td class="protein-grams"></td>
-                        <td>Grams</td>
-                        <td class="protein-palms"></td>
-                        <td>Palms</td>
-                    </tr>
-                    <tr>
-                        <td>Vegetables</td>
-                        <td></td>
-                        <td></td>
-                        <td class="veggies-fists"></td>
-                        <td>Fists</td>
-                    </tr>
-                    <tr>
-                        <td>Carbohydrates</td>
-                        <td class="carbohydrates-grams"></td>
-                        <td>Grams</td>
-                        <td class="carbohydrates-cupped-handfulls"></td>
-                        <td>Cupped handfulls</td>
-                    </tr>
-                    <tr>
-                        <td>Fats</td>
-                        <td class="fats-grams"></td>
-                        <td>Grams</td>
-                        <td class="fats-thumbs"></td>
-                        <td>Thumbs</td>
-                    </tr>
-                </table>
+                <h3><strong>To lose fat, high protein normal otherwise (Bodyweight x 12)</strong></h3>
+                <div class="calc-table-container">
+                    <div class="cal">
+                        <div class="rotation">
+                            <div class="item-label">Calories</div>
+                        </div>
+                        <div class="calories item item-number"></div>
+                    </div>
+                    <div class="pro">
+                        <div class='rotation'>
+                            <div class="item-label">Protein</div>
+                        </div>
+                        <div class="protein-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="protein-palms item item-number"></div>
+                        <div class="item-unit">Palms</div>
+                    </div>
+                    <div class="veg">
+                        <div class="rotation">
+                            <div class="item-label">Veggies</div>
+                        </div>
+                        <div class="veggies-fists item item-number veg-amount"></div>
+                        <div class="item-unit veg-unit">Fists</div>
+                    </div>
+                    <div class="carb">
+                        <div class="rotation">
+                            <div class="item-label">Carbohydrates</div>
+                        </div>
+                        <div class="carbohydrates-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="carbohydrates-cupped-handfulls item item-number"></div>
+                        <div class="item-unit small-unit">Cupped Handfulls</div>
+                    </div>
+                    <div class="fat">
+                        <div class="rotation">
+                            <div class="item-label">Fat</div>
+                        </div>
+                        <div class="fats-grams item item-number"></div>
+                        <div class="item-unit">Grams</div>
+                        <div class="fats-thumbs item item-number"></div>
+                        <div class="item-unit">Thumbs</div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
