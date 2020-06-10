@@ -14,21 +14,29 @@ var src = scripts[scripts.length - 1].src;
 //cut off this file's name so src is the name of its folder
 src = src.substr(0, src.indexOf("calc-function.js"));
 
+// Get HTML head element
+var head = document.getElementsByTagName("HEAD")[0];
+
+//Add my stylesheet
+var cssLink = document.createElement("link");
+cssLink.rel = "stylesheet";
+cssLink.type = "text/css";
+cssLink.href = src + "nutritional-calculator-styles.css";
+head.appendChild(cssLink);
+
+//Add jQuery
+var jQueryLink = document.createElement("link");
+jQueryLink.rel = "script";
+jQueryLink.type = "text/js";
+jQueryLink.href =
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js";
+head.appendChild(jQueryLink);
+
 $(document).ready(setup);
 
 //setup should be called when the document is ready
 //it adds necessary scripts and css to the page, the inserts the calculator
 function setup() {
-  // Get HTML head element
-  var head = document.getElementsByTagName("HEAD")[0];
-
-  //Add my stylesheet
-  var cssLink = document.createElement("link");
-  cssLink.rel = "stylesheet";
-  cssLink.type = "text/css";
-  cssLink.href = src + "nutritional-calculator-styles.css";
-  head.appendChild(cssLink);
-
   insertCalculator();
 }
 
