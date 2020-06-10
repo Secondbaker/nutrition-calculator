@@ -3,7 +3,6 @@ const CaloriesPerProteinGram = 4;
 const CaloresPerFatGram = 9;
 const CaloriesPerCarbohydrateGram = 4;
 const RoundingFactor = 0.25;
-const NaturalRoundingFactor = 1;
 const ProteinPerPalm = 30.0;
 const CarbohydratesPerCuppedHandfull = 35.0;
 const FatPerThumb = 15.0;
@@ -69,14 +68,20 @@ function calculate() {
   $(".nutrition-tables")
     .children()
     .each(function fillTable() {
+      //classes will contain information about what kind of calculations to do
+      //for instance, whether we want high protein or a normal amount
       let classes = $(this).attr("class");
       try {
+        //Phase 1:  Calculations
         //first we'll figure out the calories needed
-        let calories = calculateCalories(classes, weight);
-
-        $(this)
-          .find(".calories")
-          .html(roundToNearest(calories, RoundingFactor));
+        let calories = 0;
+        if (classes.includes("maintain")) {
+          calories = weight * 14.0;
+        } else if (classes.includes("lose-fat")) {
+          calories = weight * 12.0;
+        } else if (classes.includes("gain-muscle")) {
+          calories = weight * 16.0;
+        }
 
         //next we'll figure out the protein, since it relies only on weight
         let proteinGrams = 0;
@@ -87,12 +92,6 @@ function calculate() {
           proteinGrams = weight;
         }
         proteinPalms = proteinGrams / ProteinPerPalm;
-        $(this)
-          .find(".protein-grams")
-          .html(roundToNearest(proteinGrams, RoundingFactor));
-        $(this)
-          .find(".protein-palms")
-          .html(roundToNearest(proteinPalms, RoundingFactor));
 
         //next we'll need to get the carbohydrates
         //carbohydrates and fats will be calculated based on a percentage of what calories remain
@@ -100,20 +99,13 @@ function calculate() {
           calories - proteinGrams * CaloriesPerProteinGram;
         let carbCalories = 0;
         if (classes.includes("low-carb")) {
-          carbCalories = fatAndCarbCalories / 4.0;
+          carbCalories = fatAndCarbCalories * 0.25;
         } else {
-          carbCalories = fatAndCarbCalories / 2.0;
+          carbCalories = fatAndCarbCalories * 0.5;
         }
-
         let carbohydratesGrams = carbCalories / CaloriesPerCarbohydrateGram;
         let carbohydratesCuppedHandfulls =
           carbohydratesGrams / CarbohydratesPerCuppedHandfull;
-        $(this)
-          .find(".carbohydrates-grams")
-          .html(roundToNearest(carbohydratesGrams, RoundingFactor));
-        $(this)
-          .find(".carbohydrates-cupped-handfulls")
-          .html(roundToNearest(carbohydratesCuppedHandfulls, RoundingFactor));
 
         //veggies are based on different things depending on which
         //diet plan we're looking at
@@ -128,20 +120,33 @@ function calculate() {
         } else {
           veggiesFists = carbohydratesCuppedHandfulls;
         }
-        $(this)
-          .find(".veggies-fists")
-          .html(roundToNearest(veggiesFists, RoundingFactor));
 
         //finally we get the fats
         let fatCalories = fatAndCarbCalories - carbCalories;
         let fatGrams = fatCalories / CaloresPerFatGram;
         let fatThumbs = fatGrams / FatPerThumb;
+
+        //Phase 2:  Output
+        //Numbers which are measurements with scientific units will be rounded to RoundingFactor
+        //Numbers which are natural units are floored
+        $(this)
+          .find(".calories")
+          .html(roundToNearest(calories, RoundingFactor));
+        $(this)
+          .find(".protein-grams")
+          .html(roundToNearest(proteinGrams, RoundingFactor));
+        $(this).find(".protein-palms").html(Math.floor(proteinPalms));
+        $(this).find(".veggies-fists").html(Math.floor(veggiesFists));
+        $(this)
+          .find(".carbohydrates-grams")
+          .html(roundToNearest(carbohydratesGrams, RoundingFactor));
+        $(this)
+          .find(".carbohydrates-cupped-handfulls")
+          .html(Math.floor(carbohydratesCuppedHandfulls));
         $(this)
           .find(".fats-grams")
           .html(roundToNearest(fatGrams, RoundingFactor));
-        $(this)
-          .find(".fats-thumbs")
-          .html(roundToNearest(fatThumbs, RoundingFactor));
+        $(this).find(".fats-thumbs").html(Math.floor(fatThumbs));
       } catch (error) {
         //This is where we end up if classes is undefined
       }
@@ -162,18 +167,6 @@ function weightToPounds(weight, unit) {
   } else {
     return weight * KGToLB;
   }
-}
-
-function calculateCalories(classes, weight) {
-  let calories = 0;
-  if (classes.includes("maintain")) {
-    calories = weight * 14.0;
-  } else if (classes.includes("lose-fat")) {
-    calories = weight * 12.0;
-  } else if (classes.includes("gain-muscle")) {
-    calories = weight * 16.0;
-  }
-  return calories;
 }
 
 /*global jQuery */
